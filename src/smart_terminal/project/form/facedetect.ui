@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>faceDetect</class>
+ <widget class="QWidget" name="faceDetect">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>824</width>
+    <height>582</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>824</width>
+    <height>560</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#faceDetect { background-color: rgb(31, 31, 32); }</string>
+  </property>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <property name="spacing">
+    <number>8</number>
+   </property>
+   <property name="leftMargin">
+    <number>12</number>
+   </property>
+   <property name="topMargin">
+    <number>12</number>
+   </property>
+   <property name="rightMargin">
+    <number>12</number>
+   </property>
+   <property name="bottomMargin">
+    <number>12</number>
+   </property>
+   <item>
+    <layout class="QHBoxLayout" name="topLayout">
+     <property name="spacing">
+      <number>12</number>
+     </property>
+     <item>
+      <widget class="QFrame" name="vizFrame">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>190</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QFrame#vizFrame { background:#3c3c3c; border-radius:10px; }</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <layout class="QGridLayout" name="vizLayout">
+        <property name="leftMargin">
+         <number>16</number>
+        </property>
+        <property name="topMargin">
+         <number>12</number>
+        </property>
+        <property name="rightMargin">
+         <number>16</number>
+        </property>
+        <property name="bottomMargin">
+         <number>12</number>
+        </property>
+        <property name="horizontalSpacing">
+         <number>10</number>
+        </property>
+        <property name="verticalSpacing">
+         <number>8</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QLabel" name="faceStateTitle">
+          <property name="styleSheet">
+           <string notr="true">color:#a0a0a0;</string>
+          </property>
+          <property name="text">
+           <string>人脸状态</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLabel" name="faceStateLabel">
+          <property name="styleSheet">
+           <string notr="true">color:#00e676; font-size:20px; font-weight:bold;</string>
+          </property>
+          <property name="text">
+           <string>—（未接收）</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="scoreTitle">
+          <property name="styleSheet">
+           <string notr="true">color:#a0a0a0;</string>
+          </property>
+          <property name="text">
+           <string>置信度</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QProgressBar" name="scoreBar">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>22</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QProgressBar { background:#222; border-radius:11px; color:white; text-align:center; }
+QProgressBar::chunk { background:#00a0ff; border-radius:11px; }</string>
+          </property>
+          <property name="value">
+           <number>0</number>
+          </property>
+          <property name="format">
+           <string>--</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="linkTitle">
+          <property name="styleSheet">
+           <string notr="true">color:#a0a0a0;</string>
+          </property>
+          <property name="text">
+           <string>链路</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLabel" name="linkLabel">
+          <property name="styleSheet">
+           <string notr="true">color:white;</string>
+          </property>
+          <property name="text">
+           <string>未接收</string>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="fpsTitle">
+          <property name="styleSheet">
+           <string notr="true">color:#a0a0a0;</string>
+          </property>
+          <property name="text">
+           <string>帧率</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QLabel" name="fpsLabel">
+          <property name="styleSheet">
+           <string notr="true">color:white;</string>
+          </property>
+          <property name="text">
+           <string>—</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="statsTitle">
+          <property name="styleSheet">
+           <string notr="true">color:#a0a0a0;</string>
+          </property>
+          <property name="text">
+           <string>帧统计</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QLabel" name="statsLabel">
+          <property name="styleSheet">
+           <string notr="true">color:white;</string>
+          </property>
+          <property name="text">
+           <string>合法 0 / 非法 0</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="buttonLayout">
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <item>
+        <widget class="QPushButton" name="startBtn">
+         <property name="minimumSize">
+          <size>
+           <width>168</width>
+           <height>46</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>200</width>
+           <height>46</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton { background:#3c3c3c; color:white; border-radius:23px; font-size:16px; }
+QPushButton:pressed { background:#565656; }
+QPushButton:disabled { background:#2a2a2a; color:#787878; }</string>
+         </property>
+         <property name="text">
+          <string>开始人脸识别</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="stopBtn">
+         <property name="minimumSize">
+          <size>
+           <width>168</width>
+           <height>46</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>200</width>
+           <height>46</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton { background:#3c3c3c; color:white; border-radius:23px; font-size:16px; }
+QPushButton:pressed { background:#565656; }
+QPushButton:disabled { background:#2a2a2a; color:#787878; }</string>
+         </property>
+         <property name="text">
+          <string>结束识别</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="deviceBtn">
+         <property name="minimumSize">
+          <size>
+           <width>168</width>
+           <height>46</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>200</width>
+           <height>46</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton { background:#264a63; color:white; border-radius:23px; font-size:16px; }
+QPushButton:pressed { background:#356a8c; }</string>
+         </property>
+         <property name="text">
+          <string>接口：JP6</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="buttonSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="terminalTitle">
+     <property name="styleSheet">
+      <string notr="true">color:#a0a0a0;</string>
+     </property>
+     <property name="text">
+      <string>串口终端（原始帧文本，只读、自动滚动；右键可清空）</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPlainTextEdit" name="terminalEdit">
+     <property name="styleSheet">
+      <string notr="true">QPlainTextEdit#terminalEdit { background:#101010; color:#d0d0d0; border-radius:6px; }</string>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

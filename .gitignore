@@ -1,0 +1,54 @@
+# 工作流、本地配置与资料
+.ai-loop/
+.codex/
+.claude/
+.agents/
+ai-loop-engineering/
+AGENTS.md
+CLAUDE.md
+docs/
+test-reports/
+session*.md
+plan.md
+log.md
+lessons-learned.md
+
+# 外部依赖、SDK、固件与模型
+vendor/
+src/smart_terminal/project/lib/
+*.run
+*.bin
+*.kmodel
+src/k210/face_models.json
+src/k210/face_probe.py
+scripts/k210/
+
+# Qt 与 Python 生成文件
+build*/
+Makefile*
+.qmake.stash
+*.o
+*.a
+*.so
+*.so.*
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+*.pro.user
+*.pro.user.*
+__pycache__/
+*.pyc
+
+# 外部媒体与个人配置
+myMusic/
+myVideo/
+*.mp3
+*.mkv
+*.mp4
+*.avi
+*.lrc
+settings.json
+.vscode/
+.idea/
+*.swp
+*~
